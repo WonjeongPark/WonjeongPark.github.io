@@ -3,6 +3,6 @@ layout: page
 title: Thank you for your correspondence
 ---
 ## Thank you for your correspondence
-We are delighted to hear from you. You may expect to receive an answer soon.
+감사합니다.
 
-Have a nice day!
+빠른 시일 내로 확인 후 회신 드리겠습니다.

@@ -1,10 +1,10 @@
 # Site
-title:              Massively
+title:              박쩨이의 공간
 bio:                'Jekyll version of the Massively theme by HTML5UP'
 description:        "Jekyll version of the Massively theme by HTML5UP"
-locale:             en_US
+locale:             ko-KR
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+url: "https://wonjeongpark.github.io/" # the base hostname & protocol for your site
 
 # Comments
 disqus_shortname:   default
@@ -12,14 +12,14 @@ disqus_shortname:   default
 # Social
 analytics-id:       "default"
 twitter:            default
-facebook:           default
-instagram:          default
-github:             default
+facebook:           www.facebook.com/bnhs1127
+instagram:          www.instagram/w3wj3j/
+github:             www.github.com/WonjeongPark
 
 # personal
-location:           Los Angeles, CA
-phone:              310-318-5555
-email:              info@default.com # change this to your email to receive free emails for your contact submissions via Slapform.com
+location:           Seoul, KR
+phone:              010-2961-3835
+email:              bnhs1127@gmail.com # change this to your email to receive free emails for your contact submissions via Slapform.com
 
 # Other
 background_image:   /images/bg.jpg
