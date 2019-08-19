@@ -3,7 +3,7 @@ title:              박쩨이의 공간
 bio:                'Jekyll version of the Massively theme by HTML5UP'
 description:        "Jekyll version of the Massively theme by HTML5UP"
 locale:             ko-KR
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "https://github.com/WonjeongPark/whatIThink" # the subpath of your site, e.g. /blog
 url: "https://wonjeongpark.github.io/" # the base hostname & protocol for your site
 
 # Comments
