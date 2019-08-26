@@ -4,7 +4,7 @@ bio:                'WonjeongPark'
 description:        "WonjeongPark's"
 locale:             ko-KR
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://WonjeongPark.github.io" # the base hostname & protocol for your site
+url: "https://WonjeongPark.github.io" # the base hostname & protocol for your site
 remote-theme : jekyllup/jekyll-theme-massively
 # Comments
 disqus_shortname:   default
