@@ -1,11 +1,11 @@
 # Site
-title:              박쩨이의 공간
-bio:                'Jekyll version of the Massively theme by HTML5UP'
-description:        "Jekyll version of the Massively theme by HTML5UP"
+title:              박원정의 포트폴리오
+bio:                'WonjeongPark'
+description:        "WonjeongPark's"
 locale:             ko-KR
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://wonjeongpark.github.io/" # the base hostname & protocol for your site
-
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://WonjeongPark.github.io" # the base hostname & protocol for your site
+remote-theme : jekyllup/jekyll-theme-massively
 # Comments
 disqus_shortname:   default
 
