@@ -7,7 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://WonjeongPark.github.io" # the base hostname & protocol for your site
 remote-theme : jekyllup/jekyll-theme-massively
 # Comments
-disqus_shortname:   default
+disqus:   "wonjeongpark"
 
 # Social
 analytics-id:       "default"
