@@ -3,7 +3,7 @@ title:              박원정의 포트폴리오
 bio:                'WonjeongPark'
 description:        "WonjeongPark's"
 locale:             ko-KR
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://WonjeongPark.github.io" # the base hostname & protocol for your site
 remote-theme : jekyllup/jekyll-theme-massively
 # Comments
