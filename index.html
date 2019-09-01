@@ -81,9 +81,16 @@ sitemap:
 									1. 처음 2개월 코스의 국비지원학원을 다녔습니다. 시간에 쫒겨 화면만 따라치는 시간이었습니다.<br />
 									2. 생활코딩, Udemy 등 인강을 들었습니다. 학원보다 나았지만 강의 중 이해되던 것들도 강의를 끄고 아무것도 코딩할 수 없었습니다. <br />
 									3. <strong>정답은 손가락을 움직여 코딩하는 것이었습니다.</strong> 만들고 싶은 것을 구체적으로 그리고 작은 것부터 찾아보고 지인 개발자들과 대화하며 하나씩 만들었습니다.
-									<p style="background-color: rgb(238, 242, 247);">개념 공부와 따라 치기가 아니라 직접 프로젝트를 진행하면서 생각하고 부딪쳐보니<br />
-									코딩하기 전에 구조와 연관관계 등을 고려하여 계획하고 코딩하는 것이 지속적인 개발이나 유지 보수 측면에서 효율적이다고 느끼고 있습니다.</p>
+									<p style="background-color: rgb(238, 242, 247);">개념 공부와 따라 치기가 아니라 직접 프로젝트를 진행하면서 생각하고 부딪쳐보니 <br />
+									코딩하기 전에 구조와 연관관계 등을 고려하여 계획하는 것이 지속적인 개발이나 유지 보수 측면에서 효율적이다고 느끼고 있습니다.</p>
 									<br />
+									4. 중요하거나 흥미로운 개념들은 우선 관련된 글을 많이 읽어보고 스스로 정리해보는 방식으로 정리했습니다. 달달 외우는 것도, 학문적으로 깊게 파고드는 것도 아니라 
+									<strong>많이 생각하고 다양한 글을 읽어보는 것</strong>을 통해 개념과 전체적인 흐름 속 역할 등을 이해하고<br />
+									새롭게 알게 된 사실이 있다면 보강하여 저만의 알짜 노트를 만드는 것 입니다.<br />
+									
+									<br />
+									<a href="{{ "/blog" | absolute_url }}" class="button">관심이슈 정리글 보기</a></li>
+
 									<a href="#" class="image main"><img src="/images/mentoring.png" alt="" /></a>
 									<br />
 
@@ -101,15 +108,13 @@ sitemap:
 									3. 나아가 사용하는 개발 언어의 제한을 낮출 수 있다는 것입니다.<br />
 									</p>
 									</p>
-									<ul class="actions">
-										<li><a href="{{ "/blog" | absolute_url }}" class="button">관심이슈 정리글 보기</a></li>
-									</ul>
+									
 							</article>
 
 						<!-- Posts -->
 							<section class="posts">
-                {% for post in site.posts limit:3 %}
-                {% assign mod3 = forloop.index | modulo: 3 %}
+                {% for post in site.posts limit:4 %}
+                {% assign mod3 = forloop.index | modulo: 4 %}
   								<article>
   									<header>
   										<span class="date">{{ post.date | date_to_string }}</span>
@@ -122,12 +127,6 @@ sitemap:
   									</ul>
   								</article>
                   {% if mod3 == 0 %}
-                  <article>
-  									<header>
-  										<h2><a href="#">Sponsored</a></h2>
-  									</header>
-
-  								</article>
                   {% endif %}
                 {% endfor %}
 
