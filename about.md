@@ -30,74 +30,44 @@ HowTo를 개인 트레이너(trainer)와 수강생(trainee)의 중개 플랫폼�
 2. WEB을 선택한 이유
 헬스장이나 운동업계 시스템이 일별, 월별 등록시스템이 주를 이루고, 그에 따라 그때그때 발생되는 프로모션과 관련된 배너 등의 즉각적인 반영을 위해서 서버에 변경사항을 업데이트하고 또 클라이언트에서 요청이 쉬운 WEB을 선택하였습니다.
 
-### Lifecycle
-```
-state = {
-  users : [{
-        id:'',
-        name: '',
-        gym: '',
-        gender: '',
-        career:'',
-        dates:[],
-        dates:'',
-        bodypart:'',
-        playerSource:'',
-        count:0,
-        Num:0
-  }]
-};
+## howto 프로젝트 중 에러 해결 -Lifecycle
+<a href="{{ "/blog" | absolute_url }}" class="button">읽어보기</a>
 
+## Howto 이미지 
 
-  componentDidMount() {
-    this.callBackendAPI()
-      .then(res => {console.log(res);
-        this.setState( 
-        {users : res}
-      )} )
-      .catch(err => console.log(err));
-  }
-  callBackendAPI = async () => {
-    const response = await fetch('/users');
-    const body = await response.json();
-    if (response.status !== 200) {
-      throw Error(body.message) 
-    }
-    return body;
-  };
+<img src="/images/howto/HomepageR.png" width="100%" alt="HomepageR"><br>
+### HomePage
+1. 메뉴<br>
+2. 로그인, 회원가입 버튼 -> 각 페이지 이동<br>
+3. 트레이너찾기 버튼 -> 로그인화면 이동<br>
+(로그인되어있다면 회원유형에따라 수강생-> 트레이너페이지 / 트레이너 -> 수강생목록페이지 이동예정)<br>
 
-  render() {
-       ///
-  ```
+<img src="/images/howto/LoginR.png" width="100%" alt="LoginR"><br>
+### Login
+1. 로그인, 회원가입 버튼<br>
+2. 아이디, 비밀번호 입력 후 로그인버튼<br>
+(회원유형에따라 수강생-> 트레이너페이지 / 트레이너 -> 수강생목록페이지 이동예정)<br>
+3. 회원가입 버튼 -> 회원가입폼 이동<br>
 
-콜백함수를 이용하여 DB에 저장된 users를 불러와 state에 담으려는 TEST용 CODE이다.
+<img src="/images/howto/Form1.png" width="100%" alt="Form1"><br>
+<img src="/images/howto/Form2R.png" width="100%" alt="Form2R"><br>
+### Form(Trainer Version)
+1. MultipleDatePicker를 이용하여 원하는 날짜 여러개 선택가능(아래 이미지)<br>
+2. 직접입력 or 버튼 이용 횟수조절<br>
+3. 회원가입 이동<br>
+(회원유형에따라 수강생-> 트레이너페이지 / 트레이너 -> 수강생목록페이지 이이동예정동)<br>
 
-  ```
-  console.log(this.state.users )
-  console.log(this.state.users[0]) //ok
-  console.log(this.state.users[1]) //ok
-  console.log(this.state.users[0].name) //ok
-  console.log(this.state.users[1].name) // ERROR!!
+<img src="/images/howto/Form_dates2.png" width="100%" alt="Form_dates2"><br>
+### Form -dates
+1. MultipleDatePicker를 이용하여 원하는 날짜 여러개 선택 가능<br>
+2. 선택 시점의 날짜 포함 이후 날짜만 선택 가능<br>
 
-//**
-  // 0은 되고 1은 안되는 이유는 무엇인가!!!!
-//**
-  }
-```
-멘붕에 빠지는 오류였다. 콜백 함수는 잘 작동되고 users[0], users[1] 모두 아주 예쁜 Array로 콘솔 창에 등장했지만 <br>
-문제는 users 배열 속 특정 객체를 불러오는 과정에서 users[0].name과 users[1].name의 결과가 다르게 나왔기 때문이다.<br>
-이때까지 공부한 개념과는 전혀 다른 오류에 느꼈던 당황함은 아직도 생생하다.<br>
-<br>
-정답은 Lifecycle에 있었다.<br>
-console.log는 콜백 함수인 ComponentDidMount 전, 후에 한 번씩 동작되기 때문에 콜백 함수 전에 실행되는<br>
-console.log(this.state.users[1].name)는 undefind였던 것이다.<br>
-console.log(this.state.users[0].name)이 오류가 아닌 이유는 state에 미리 정의해놓은 빈 users array에 걸려<br>
-값이 없을지언정 undefind 오류를 던지지 않았기 때문이다.<br>
-<br>
-며칠 동안 나를 괴롭혔던 오류는 아주 간단하고 이미 알고 있던 Lifecycle에 관한 것이었다.<br>
-미리 정리했던 <a href="{{ "/blog/LifecycleAPI" | absolute_url }}" >Lifecycle 정리 글</a>을 읽어보고 새로 노트를 기록해 두었다.<br>
-<br>
-이 과정에서 깨달은 것은 오류가 발생하면 구문 오류뿐 아니라 Lifecycle를 포함해서 지금 실행되는 화면과 데이터의 흐름을 다시 짚어보고 오류가 나올만한 곳을 되짚어봐야 한다는 것이다.<br>
-또한 알고 있는 개념이 언제 어느 상황에서 정체를 숨기고 나타날지 모른다는 것.<br>
-즉 `개념을 이해한다는 것`에서 `개발을 하며 오류를 해결하는 것`은 심화과정이라는 것이다<br>
-적당한 개념 정리와 실제 적용, 그에 따른 정리를 하는 것은 성장의 지름길이다! <br>
+<img src="/images/howto/TrainerListR.png" width="100%" alt="TrainerListR"><br>
+### TrainerList
+1. 나의 프로필, 로그아웃버튼 예정<br>
+2. 클릭시 4번과 같이 날짜보여지기<br>
+3. 트레이너에게 메일 보내기<br>
+4. MultipleDatePicker를 이용한 날짜 리스트 보여지기(2개이상일 경우 스크롤생성)<br>
+5. Trainer 회원가입시 등록한 간단 운동 비디오 보여지기<br>
+6. 영상 즐겨찾기 예정 및 해당 트레이너에게 메일보내기<br>
+7. 비디오리스트부분 개별 스크롤<br>

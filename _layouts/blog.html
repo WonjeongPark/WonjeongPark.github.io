@@ -39,9 +39,31 @@
             </header>
 						<p>개발 과정에서 코드를 치는 것 이외에도 중요한 것은 글을 쓰는 것이라고 생각합니다.<br>
 						개발의 전반적인 과정을 이해하기 위한 개념을 습득하기 위해서 많은 글을 읽고 정리합니다. 학문적으로 완벽하지도, 모든 지식이 포함되어 있지도 않습니다. 하지만 당시 제가 알아야 할 수준으로 적고 고치고를 반복합니다. </p>
-						<p>개념 정리를 한다고 해서 코딩 과정에서 모두 적용시킬 수 없다는 것을 잘 압니다.<a href="{{/about}}">(Lifecycle의 예)</a><br>
+						<p>개념 정리를 한다고 해서 코딩 과정에서 모두 적용시킬 수 없다는 것을 잘 압니다.(Lifecycle의 예)<br>
 						하지만 분명 문제해결에 도움을 줄 것이고 그 과정을 기록하는 것을 반복하다보면 코드에서도 개념이 잘 보일 것이라고 믿습니다.</p> 
 
+						<h3>howto 프로젝트 중 에러 해결 -Lifecycle</h3>
+							<img src="/images/LifecycleEx.png" alt="LifecycleEx">
+							<br>콜백함수를 이용하여 DB에 저장된 users를 불러와 state에 담으려는 TEST용 CODE이다.<br>
+							<img src="/images/LifecycleEx2.png" alt="LifecycleEx2">
+							
+								멘붕에 빠지는 오류였다. 콜백 함수는 잘 작동되고 users[0], users[1] 모두 아주 예쁜 Array로 콘솔 창에 등장했지만 <br>
+								문제는 users 배열 속 특정 객체를 불러오는 과정에서 users[0].name과 users[1].name의 결과가 다르게 나왔기 때문이다.<br>
+								이때까지 공부한 개념과는 전혀 다른 오류에 느꼈던 당황함은 아직도 생생하다.<br>
+								<br>
+								정답은 Lifecycle에 있었다.<br>
+								console.log는 콜백 함수인 ComponentDidMount 전, 후에 한 번씩 동작되기 때문에 콜백 함수 전에 실행되는<br>
+								console.log(this.state.users[1].name)는 undefind였던 것이다.<br>
+								console.log(this.state.users[0].name)이 오류가 아닌 이유는 state에 미리 정의해놓은 빈 users array에 걸려<br>
+								값이 없을지언정 undefind 오류를 던지지 않았기 때문이다.<br>
+								<br>
+								며칠 동안 나를 괴롭혔던 오류는 아주 간단하고 이미 알고 있던 Lifecycle에 관한 것이었다.<br>
+								미리 정리했던 <a href="{{ "/blog/LifecycleAPI" | absolute_url }}" >Lifecycle 정리 글</a>을 읽어보고 새로 노트를 기록해 두었다.<br>
+								<br>
+								이 과정에서 깨달은 것은 오류가 발생하면 구문 오류뿐 아니라 Lifecycle를 포함해서<br>지금 실행되는 화면과 데이터의 흐름을 다시 짚어보고 오류가 나올만한 곳을 되짚어봐야 한다는 것이다.<br>
+								또한 알고 있는 개념이 언제 어느 상황에서 정체를 숨기고 나타날지 모른다는 것.<br>
+								즉 `개념을 이해한다는 것`에서 `개발을 하며 오류를 해결하는 것`은 심화과정이라는 것이다<br>
+								적당한 개념 정리와 실제 적용, 그에 따른 정리를 하는 것은 성장의 지름길이다! <br>
           </article>
 					<!-- Post -->
 					<section class="posts">
