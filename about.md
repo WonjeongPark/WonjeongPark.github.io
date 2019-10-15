@@ -13,8 +13,11 @@ sitemap:
 <a href="#" class="image main"><img src="/images/howtoHomepage.png" alt="" /></a>
 
 > 개발툴: Visual Studio Code<br>
-> 프레임워크: ReactJs, NodeJs(Express기반 REST API)<br>
-> 언어: Html, css, Javascript
+> 라이브러리 & 프레임워크: ReactJs, NodeJs(Express기반 REST API)<br>
+> 언어: Html, css, Javascript<br>
+
+> Front-end : HTML, CSS, Javascript, ReactJs<br>
+> Back-end : NodeJs(Express기반 REST API), Mysql(sequelize)<br>
 > <div class="actions">
 	<a href="https://github.com/WonjeongPark/howto" class="button">HOWTO 개발계획서</a>&nbsp;&nbsp;<a href="https://docs.google.com/presentation/d/19S967ZQ7yASUOyzDys5l-D6k_L6AQt2WhODyO6SyT4M/edit?usp=sharing" class="button">HowTo 스토리보드</a>&nbsp;&nbsp;<a href="{{ "/blog/HowtoBuild" | absolute_url }}" class="button">Howto 빌드 방법보기</a>
 
