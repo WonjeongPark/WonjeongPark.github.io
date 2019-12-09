@@ -2,7 +2,7 @@
 layout: post
 title:  "Redux는 필수일까?"
 date:   2019-12-07
-excerpt: "React는 상태관리 프레임워크에 관한 고찰"
+excerpt: "React의 상태관리 프레임워크에 관한 고찰"
 image: "/images/ppt_191207/s1.PNG"
 ---
 
